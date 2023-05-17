@@ -1,6 +1,7 @@
 package catalogo;
 
 import java.time.DateTimeException;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -26,16 +27,18 @@ public class Gestor {
 	 * */
 	public Gestor(String[][] tabla) {
 		this();
-		DateTimeFormatter df = DateTimeFormatter.ofPattern("HH:mm");
+		DateTimeFormatter duracion = DateTimeFormatter.ofPattern("HH:mm");
+		DateTimeFormatter fecha = DateTimeFormatter.ofPattern("HH:mm");
 		for(int i = 0; i < tabla.length; i++) {
 			try {
-				switch(tabla[i][3]) {
-//					case "CD" -> lista.add(
-//						new CD(tabla[i][0],tabla[i][1], tabla[i][2], LocalTime.parse(tabla[i][5], df),
-//							LocalTime.parse(tabla[i][6], df), tabla[i][4]));
-//					case "operador" -> lista.add(
-//						new Vinilo(tabla[i][0],tabla[i][1], tabla[i][2], LocalTime.parse(tabla[i][5], df),
-//							LocalTime.parse(tabla[i][6], df), Integer.parseInt(tabla[i][4])));
+//				String nombre, String artista, LocalTime duracion, LocalDate flanzamiento,int pulgadas, String[] caraA, String[] caraB
+				switch(tabla[i][0]) {
+					case "Vinilo" -> lista.add(
+						new Vinilo(tabla[i][1],tabla[i][2], LocalTime.parse(tabla[i][3],duracion),
+								LocalDate.parse(tabla[i][4], fecha), Integer.parseInt(tabla[i][5]),
+								tabla[i][6].split(":"),tabla[i][7].split(":")));
+					case "CD" -> lista.add(
+						new CD(tabla[i][1],tabla[i][2], LocalTime.parse(tabla[i][3],duracion),LocalDate.parse(tabla[i][4], fecha), tabla[i][5].split(":")));
 				}
 			} catch (DateTimeException e) {
 //				errorLog += "Error en la hora en la línea " + i + ".\n";
