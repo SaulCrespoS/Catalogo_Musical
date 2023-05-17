@@ -11,43 +11,43 @@ public class Medio {
 //	private enum genero;
 	private LocalDate flanzamiento;
 	
-	protected Medio() {
+	public Medio() {
 		nombre="";
 		artista="";
 		duracion= LocalTime.now();
 //		genero="";
 		flanzamiento=LocalDate.now();
 	}
-	protected Medio(String nombre, String artista, LocalTime duracion, LocalDate flanzamiento) {
+	public Medio(String nombre, String artista, LocalTime duracion, LocalDate flanzamiento) {
 		this.nombre=nombre;
 		this.artista=artista;
 		this.duracion=duracion;
 //		this.genero=Genero;
 		this.flanzamiento=flanzamiento;
 	}
-	protected String getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
-	protected void setNombre(String nombre) {
-		nombre = nombre;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-	protected String getArtista() {
+	public String getArtista() {
 		return artista;
 	}
-	protected void setArtista(String artista) {
-		artista = artista;
+	public void setArtista(String artista) {
+		this.artista = artista;
 	}
-	protected LocalTime getDuracion() {
+	public LocalTime getDuracion() {
 		return duracion;
 	}
-	protected void setDuracion(LocalTime duracion) {
-		duracion = duracion;
+	public void setDuracion(LocalTime duracion) {
+		this.duracion = duracion;
 	}
-	protected LocalDate getFlanzamiento() {
+	public LocalDate getFlanzamiento() {
 		return flanzamiento;
 	}
-	protected void setFlanzamiento(LocalDate flanzamiento) {
-		flanzamiento = flanzamiento;
+	public void setFlanzamiento(LocalDate flanzamiento) {
+		this.flanzamiento = flanzamiento;
 	}
 	@Override
 	public String toString() {
