@@ -5,7 +5,12 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 
+import clasesqueordenan.Orden_Artista;
+import clasesqueordenan.Orden_Duracion;
+import clasesqueordenan.Orden_Fecha;
+import clasesqueordenan.Orden_Nombre;
 import entidades.CD;
 import entidades.Medio;
 import entidades.Vinilo;
@@ -46,5 +51,33 @@ public class Gestor {
 //				errorLog += "Error en el numero de taller en la línea " + i + ".\n";
 			}
 		}
+	}
+	
+	public String listarPorFecha() {
+		Collections.sort(lista, new Orden_Fecha());
+		return listarMedios();
+	}
+	
+	public String listarPorArtista() {
+		Collections.sort(lista, new Orden_Artista());
+		return listarMedios();
+	}
+	
+	public String listarPorDuracion() {
+		Collections.sort(lista, new Orden_Duracion());
+		return listarMedios();
+	}
+	
+	public String listarPorNombre() {
+		Collections.sort(lista, new Orden_Nombre());
+		return listarMedios();
+	}
+	
+	public String listarMedios() {
+		String temp="";
+		for(Medio m:lista) {
+			temp+=m + "\n";
+		}
+		return temp;
 	}
 }
