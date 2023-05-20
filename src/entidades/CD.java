@@ -7,20 +7,20 @@ public class CD extends Medio{
 
 	
 //	private enum Cubierta;
-	private int[] pistas=new int[10];
+	private String[] pistas;
 	
 	public CD(){
 		super();
-		this.pistas=pistas;
+		this.pistas=new String[10];;
 	}
-	public CD(String nombre, String artista, LocalTime duracion, LocalDate flanzamiento, int[] pistas) {
+	public CD(String nombre, String artista, LocalTime duracion, LocalDate flanzamiento, String[] pistas) {
 		super(nombre,artista, duracion, flanzamiento);
 		this.pistas=pistas;
 	}
-	public int[] getPistas() {
+	public String[] getPistas() {
 		return pistas;
 	}
-	public void setPistas(int[] pistas) {
+	public void setPistas(String[] pistas) {
 		this.pistas = pistas;
 	}
 
