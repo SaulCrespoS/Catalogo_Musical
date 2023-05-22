@@ -22,5 +22,8 @@ public class CD extends Medio{
 	public void setPistas(String[] pistas) {
 		this.pistas = pistas;
 	}
+//	public String toString(){
+//		return "nombre"+getNombre();+" artista "+getArtista()+" duración "+getDuracion()+ " genero de la canción "+ getGenero() +" Fecha de salida "+ gerFlanzamiento()+" Pistas "+getPistas();
+//	}
 
 }
