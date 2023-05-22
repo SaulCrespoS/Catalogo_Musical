@@ -13,7 +13,13 @@ public class Principal {
 	public static void main(String[] args) {
 		boolean run = true;
 		try {
-			Gestor g = new Gestor(Ficheros.leerTabla("medios.csv"));
+			Gestor g;
+			try {
+				g = new Gestor(Ficheros.leerTabla("medios.csv"));
+			} catch (IOException e) {
+				g = new Gestor();
+			}
+			
 			Consola c = new Consola();
 			
 			do {
