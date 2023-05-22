@@ -60,12 +60,12 @@ public class Principal {
 				case 'v' -> {
 					datos[4] = c.in("Introduzca pulgadas");
 					datos[5] = c.in("Introduzca número de pistas (cara A)");
-					String[] pistasA = new String[Integer.parseInt(datos[4])];
+					String[] pistasA = new String[Integer.parseInt(datos[5])];
 					for(int i = 0; i < pistasA.length; i++) {
 						pistasA[i] = c.in("Introduzca nombre de la pista " + (i + 1));
 					}
 					datos[5] = c.in("Introduzca número de pistas (cara B)");
-					String[] pistasB = new String[Integer.parseInt(datos[4])];
+					String[] pistasB = new String[Integer.parseInt(datos[5])];
 					for(int i = 0; i < pistasB.length; i++) {
 						pistasB[i] = c.in("Introduzca nombre de la pista " + (i + 1));
 					}
