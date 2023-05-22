@@ -80,4 +80,14 @@ public class Gestor {
 		}
 		return temp;
 	}
+
+	public void add(Medio medio) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String delete(String in) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
