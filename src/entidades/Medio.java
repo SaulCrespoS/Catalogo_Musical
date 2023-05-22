@@ -56,6 +56,10 @@ public class Medio {
 				+ flanzamiento + "]";
 	}
 	
+	public String toFichero() {
+		return nombre + ";" + artista + ";" + duracion + ";" + flanzamiento;
+	}
+	
 	
 
 }

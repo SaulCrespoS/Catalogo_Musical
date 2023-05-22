@@ -2,6 +2,8 @@ package entidades;
 
 import java.time.LocalDate;
 
+import utilidades.Tools;
+
 public class CD extends Medio{
 
 	
@@ -21,6 +23,10 @@ public class CD extends Medio{
 	}
 	public void setPistas(String[] pistas) {
 		this.pistas = pistas;
+	}
+	
+	public String toFichero() {
+		return "CD;" + super.toFichero() + ";" + Tools.toFicheroArray(pistas);
 	}
 
 }
