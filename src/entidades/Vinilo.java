@@ -39,4 +39,8 @@ public class Vinilo extends Medio {
 		this.caraB = caraB;
 	}
 
+//	public String toString(){
+//		return "nombre"+getNombre();+" artista "+getArtista()+" duración "+getDuracion()+ " genero de la canción "+ getGenero() +" Fecha de salida "+ gerFlanzamiento()
+//		+" pulgadas "+getPulgadas()+" canciones cara A "+getCaraA()+" canciones cara B "+getCaraB();
 }
+	
