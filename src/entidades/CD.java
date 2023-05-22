@@ -13,7 +13,7 @@ public class CD extends Medio{
 		super();
 		this.pistas=new String[10];;
 	}
-	public CD(String nombre, String artista, LocalTime duracion, LocalDate flanzamiento, String[] pistas) {
+	public CD(String nombre, String artista, int duracion, LocalDate flanzamiento, String[] pistas) {
 		super(nombre,artista, duracion, flanzamiento);
 		this.pistas=pistas;
 	}

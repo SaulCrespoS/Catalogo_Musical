@@ -1,5 +1,6 @@
 package entidades;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -7,21 +8,21 @@ public class Medio {
 	
 	private String nombre;
 	private String artista;
-	private LocalTime duracion;
+	private Duration duracion;
 //	private enum genero;
 	private LocalDate flanzamiento;
 	
 	public Medio() {
 		nombre="";
 		artista="";
-		duracion= LocalTime.now();
+		duracion= Duration.ofMinutes(0);
 //		genero="";
 		flanzamiento=LocalDate.now();
 	}
-	public Medio(String nombre, String artista, LocalTime duracion, LocalDate flanzamiento) {
+	public Medio(String nombre, String artista, int duracion, LocalDate flanzamiento) {
 		this.nombre=nombre;
 		this.artista=artista;
-		this.duracion=duracion;
+		this.duracion= Duration.ofMinutes(duracion);
 //		this.genero=Genero;
 		this.flanzamiento=flanzamiento;
 	}
@@ -37,11 +38,11 @@ public class Medio {
 	public void setArtista(String artista) {
 		this.artista = artista;
 	}
-	public LocalTime getDuracion() {
+	public Duration getDuracion() {
 		return duracion;
 	}
-	public void setDuracion(LocalTime duracion) {
-		this.duracion = duracion;
+	public void setDuracion(int duracion) {
+		this.duracion = Duration.ofMinutes(duracion);
 	}
 	public LocalDate getFlanzamiento() {
 		return flanzamiento;
