@@ -32,18 +32,17 @@ public class Gestor {
 	 * */
 	public Gestor(String[][] tabla) {
 		this();
-		DateTimeFormatter duracion = DateTimeFormatter.ofPattern("HH:mm");
 		DateTimeFormatter fecha = DateTimeFormatter.ofPattern("HH:mm");
 		for(int i = 0; i < tabla.length; i++) {
 			try {
 //				String nombre, String artista, LocalTime duracion, LocalDate flanzamiento,int pulgadas, String[] caraA, String[] caraB
 				switch(tabla[i][0]) {
 					case "Vinilo" -> lista.add(
-						new Vinilo(tabla[i][1],tabla[i][2], LocalTime.parse(tabla[i][3],duracion),
+						new Vinilo(tabla[i][1],tabla[i][2], Integer.parseInt(tabla[i][3]),
 								LocalDate.parse(tabla[i][4], fecha), Integer.parseInt(tabla[i][5]),
 								tabla[i][6].split(":"),tabla[i][7].split(":")));
 					case "CD" -> lista.add(
-						new CD(tabla[i][1],tabla[i][2], LocalTime.parse(tabla[i][3],duracion),LocalDate.parse(tabla[i][4], fecha), tabla[i][5].split(":")));
+						new CD(tabla[i][1],tabla[i][2], Integer.parseInt(tabla[i][3]),LocalDate.parse(tabla[i][4], fecha), tabla[i][5].split(":")));
 				}
 			} catch (DateTimeException e) {
 //				errorLog += "Error en la hora en la línea " + i + ".\n";
@@ -82,12 +81,16 @@ public class Gestor {
 	}
 
 	public void add(Medio medio) {
-		// TODO Auto-generated method stub
-		
+		lista.add(medio);
 	}
 
 	public String delete(String in) {
-		// TODO Auto-generated method stub
-		return null;
+		boolean borro = false;
+		for(Medio m:lista) {
+			if(in.equals(m.getNombre())) {
+				borro = lista.remove(m);
+			}
+		}
+		return borro? "El álbum " + in + " se borró exitosamente.":"El álbum " + in + " no existe en la lista.";
 	}
 }
