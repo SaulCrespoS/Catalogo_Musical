@@ -30,7 +30,20 @@ public class Principal {
 	}
 	
 	public static String add(Consola c) {
-		return "";
+		try {
+			switch(c.in("¿Desea añadir un CD o un vinilo?").toLowerCase().charAt(0)) {
+				case 'c' -> {
+					
+				}
+				case 'v' -> {
+					
+				}
+			}
+			return "";
+		} catch (Exception e){
+			System.out.println(e.getMessage());
+		}
+		return "Error al añadir el álbum";	
 	}
 	
 	public static String list(Consola c) {
