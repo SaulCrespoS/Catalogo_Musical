@@ -44,4 +44,9 @@ public class Vinilo extends Medio {
 		return "Vinilo;" + super.toFichero() + Tools.toFicheroArray(caraA) + ";" + Tools.toFicheroArray(caraB);
 	}
 
+	public String toString(){
+		return "nombre"+getNombre()+" artista "+getArtista()+" duración "+getDuracion() +" Fecha de salida "+ getFlanzamiento()
+		+" pulgadas "+getPulgadas()+" canciones cara A "+getCaraA()+" canciones cara B "+getCaraB();
+	}
 }
+	

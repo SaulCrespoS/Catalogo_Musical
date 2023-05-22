@@ -4,28 +4,37 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import enums.Generos;
+
 public class Medio {
 	
 	private String nombre;
 	private String artista;
 	private Duration duracion;
-//	private enum genero;
+	private Generos genero;
 	private LocalDate flanzamiento;
 	
 	public Medio() {
 		nombre="";
 		artista="";
 		duracion= Duration.ofMinutes(0);
-//		genero="";
 		flanzamiento=LocalDate.now();
 	}
 	public Medio(String nombre, String artista, int duracion, LocalDate flanzamiento) {
 		this.nombre=nombre;
 		this.artista=artista;
 		this.duracion= Duration.ofMinutes(duracion);
-//		this.genero=Genero;
 		this.flanzamiento=flanzamiento;
 	}
+	
+	public Medio(String nombre, String artista, int duracion, LocalDate flanzamiento, Generos genero) {
+		this.nombre=nombre;
+		this.artista=artista;
+		this.duracion= Duration.ofMinutes(duracion);
+		this.genero= genero;
+		this.flanzamiento=flanzamiento;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -58,6 +67,12 @@ public class Medio {
 	
 	public String toFichero() {
 		return nombre + ";" + artista + ";" + duracion + ";" + flanzamiento;
+	}
+	public Generos getGenero() {
+		return genero;
+	}
+	public void setGenero(Generos genero) {
+		this.genero = genero;
 	}
 	
 	
