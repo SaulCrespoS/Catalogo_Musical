@@ -36,7 +36,7 @@ public class Principal {
 	public static String add(Consola c, Gestor g) {
 		try {
 			DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-			String[] datos = new String[9];
+			String[] datos = new String[7];
 			datos[0] = c.in("Introduzca nombre del álbum");
 			datos[1] = c.in("Introduzca nombre del artista");
 			datos[2] = c.in("Introduzca duración del álbum");
