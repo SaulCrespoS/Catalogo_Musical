@@ -14,7 +14,7 @@ public class Vinilo extends Medio {
 		this.caraA=caraA;
 		this.caraB=caraB;
 	}
-	public Vinilo(String nombre, String artista, LocalTime duracion, LocalDate flanzamiento,int pulgadas, String[] caraA, String[] caraB) {
+	public Vinilo(String nombre, String artista, int duracion, LocalDate flanzamiento,int pulgadas, String[] caraA, String[] caraB) {
 		super(nombre,artista, duracion, flanzamiento);
 		this.pulgadas=pulgadas;
 		this.caraA=caraA;
